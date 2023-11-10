@@ -1,0 +1,8 @@
+/************** Banner **************/
+.banner{
+    height:100vh;
+    width:100vw;
+}
+.carousel-inner {
+    height: 100vh;
+}

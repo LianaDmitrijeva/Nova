@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+/********** Navigation bar **********/
+/* .icon1{
+    margin-top:-15px;
+    width: 30px;
+} */
+.logreg a{
+    display: inline-block;
+    text-decoration: none;
+}
