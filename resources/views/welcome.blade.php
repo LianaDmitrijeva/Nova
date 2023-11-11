@@ -11,8 +11,8 @@
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-TpNbENgF7A4AZylN1+b4lL+1p4OupIyA9Hftv5iX1DeTwC1p1qj4I7F9u1wFMahj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-ywJldY+V5q5yFGr4uhmiC6dgu/Feq6auRR2doeS5l92PeDPAOcmmEEbI57fk8IqP" crossorigin="anonymous"></script>
       <!-- Style -->
-      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-      <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+      {{-- <link href="{{ asset('css/index.css') }}" rel="stylesheet"> --}}
     </head>
     <body>
       <!-- Banner -->
@@ -81,8 +81,20 @@
                 </li>
               </ul>
               <div class="logreg">
-                <a class="btn btn-outline-secondary" href="#">Log In</a> |
-                <a class="btn btn-outline-secondary" href="#">Register</a>
+                <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+                    @if (Route::has('login'))
+                        <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                            @auth
+                                <a href="{{ url('/dashboard') }}" class="btn btn-outline-secondary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                            @else
+                                <a href="{{ route('login') }}" class="btn btn-outline-secondary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+        
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="btn btn-outline-secondary ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                @endif
+                            @endauth
+                        </div>
+                    @endif
               </div>
             </div>
           </div>
