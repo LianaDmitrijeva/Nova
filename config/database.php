@@ -92,6 +92,14 @@ return [
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
+        
+        // 'firebase' => [
+        //     'driver' => 'firebase',
+        //     'credentials' => [
+        //         'file' => env('FIREBASE_CREDENTIALS'),
+        //     ],
+        //     'url' => env('FIREBASE_DATABASE_URL'),
+        // ],
 
     ],
 
