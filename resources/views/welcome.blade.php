@@ -68,13 +68,11 @@
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                   <div class="dropdown-menu w-100 dropnav">
                     <!-- List of Categories-->
-                    {{-- <div>
-                      <ul>
-                          @foreach($categories as $category)
-                              <li>{{ $category->name }}</li>
+                    <div>
+                          @foreach ($categories as $category)
+                            <a class="nav-link" href="#">{{ $category->name }}</a>
                           @endforeach
-                      </ul>
-                  </div> --}}
+                    </div>
                   </div>
                 </li>
                 <li class="nav-item dropdown position-static">
