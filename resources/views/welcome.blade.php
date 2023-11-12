@@ -26,13 +26,13 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="4500">
-              <img src="{{ asset('img/test.avif') }}" class="d-block w-100" alt="...">
+              <img src="{{ asset('img/test2.webp') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="4500">
-              <img src="{{ asset('img/test.avif') }}" class="d-block w-100" alt="...">
+              <img src="{{ asset('img/test3.jfif') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="4500">
-              <img src="{{ asset('img/test.avif') }}" class="d-block w-100" alt="...">
+              <img src="{{ asset('img/test4.webp') }}" class="d-block w-100" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -67,52 +67,49 @@
                 <li class="nav-item dropdown position-static">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                   <div class="dropdown-menu w-100 dropnav">
-                    List of Categories
+                    <!-- List of Categories-->
+                    {{-- <div>
+                      <ul>
+                          @foreach($categories as $category)
+                              <li>{{ $category->name }}</li>
+                          @endforeach
+                      </ul>
+                  </div> --}}
                   </div>
                 </li>
                 <li class="nav-item dropdown position-static">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Search</a>
                   <div class="dropdown-menu w-100 dropnav">
-                      <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-secondary" type="submit">Search</button>
-                      </form>
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    </form>
                   </div>
                 </li>
               </ul>
               <div class="logreg">
                 <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-                    @if (Route::has('login'))
-                        <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                            @auth
-                                <a href="{{ url('/dashboard') }}" class="btn btn-outline-secondary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                            @else
-                                <a href="{{ route('login') }}" class="btn btn-outline-secondary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-        
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="btn btn-outline-secondary ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                                @endif
-                            @endauth
-                        </div>
-                    @endif
+                  @if (Route::has('login'))
+                    <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                      @auth
+                        <a href="{{ url('/dashboard') }}" class="btn btn-outline-secondary">My profile</a>
+                      @else
+                        <a href="{{ route('login') }}" class="btn btn-outline-secondary font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                      @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="btn btn-outline-secondary ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                      @endif
+                      @endauth
+                    </div>
+                  @endif
               </div>
             </div>
           </div>
         </nav>
       </div>
-        <!-- Collapsed Search Bar -->
-        <div class="collapse" id="search">
-          <div class="card card-body">
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-secondary" type="submit">Search</button>
-            </form>
-          </div>
-        </div> 
-        <div style=" text-align: center; vertical-align: middle; line-height: 90px; padding-top:400px;padding-bottom:400px;">CONTENT</div>
-          <div style="text-align: center; vertical-align: middle" class="footer">
-            FOOTER
-          </div>
+      <div style=" text-align: center; vertical-align: middle; line-height: 90px; padding-top:400px;padding-bottom:400px;">CONTENT</div>
+        <div style="text-align: center; vertical-align: middle" class="footer">
+          FOOTER
         </div>
+      </div>
     </body>
 </html>

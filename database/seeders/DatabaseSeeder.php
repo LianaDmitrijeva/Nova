@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +13,35 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $categories = [
+            ['name' => 'Blazers'],
+            ['name' => 'Trousers'],
+            ['name' => 'Hoodies & Sweatshirts'],
+        ];
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $products = [
+            [
+                'name' => 'Black blazer',
+                'price' => 49.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Black',
+                'picture' => 'product1.webp',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Gray blazer',
+                'price' => 49.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Gray',
+                'picture' => 'product2.webp',
+                'category_id' => 1,
+            ],
+        ];
+                // Insert data into the categories table
+                DB::table('categories')->insert($categories);
+
+                // Insert data into the products table
+                DB::table('products')->insert($products);
+        
     }
 }
