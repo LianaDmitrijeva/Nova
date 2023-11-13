@@ -15,8 +15,17 @@ class DatabaseSeeder extends Seeder
     {
         $categories = [
             ['name' => 'Blazers'],
+            ['name' => 'Vests'],
+            ['name' => 'Shirts'],
+            ['name' => 'Blouses'],
             ['name' => 'Trousers'],
-            ['name' => 'Hoodies & Sweatshirts'],
+            ['name' => 'Skirts'],
+            ['name' => 'Dresses'],
+            ['name' => 'Suits'],
+            ['name' => 'Tuxedos'],
+            ['name' => 'Coats'],
+            ['name' => 'Shoes'],
+            ['name' => 'Accessories'],
         ];
 
         $products = [
