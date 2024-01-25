@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('price', 8, 2);
             $table->json('sizes');
             $table->string('colour');
+            $table->string('sex');
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
 

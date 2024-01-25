@@ -26,13 +26,13 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="4500">
-              <img src="{{ asset('img/test2.webp') }}" class="d-block w-100" alt="...">
+              <img src="{{ asset('img/test3.jfif') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="4500">
               <img src="{{ asset('img/test3.jfif') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="4500">
-              <img src="{{ asset('img/test4.webp') }}" class="d-block w-100" alt="...">
+              <img src="{{ asset('img/test3.jfif') }}" class="d-block w-100" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -70,11 +70,11 @@
                     <!-- List of Categories-->
                     <div class="container-fluid">
                       <div class="row">
-                      @foreach ($categories as $category)
-                         <div class="col-md-3 col-sm-6">
+                        @foreach ($categories as $category)
+                          <div class="col-md-3 col-sm-6">
                             <a class="nav-link" href="#">{{ $category->name }}</a>
-                         </div>
-                      @endforeach
+                          </div>
+                        @endforeach
                       </div>
                     </div>
                   </div>
@@ -89,7 +89,7 @@
                   </div>
                 </li>
               </ul>
-              <div class="logreg">
+              <div>
                 <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
                   @if (Route::has('login'))
                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
@@ -108,7 +108,34 @@
           </div>
         </nav>
       </div>
-      <div style=" text-align: center; vertical-align: middle; line-height: 90px; padding-top:400px;padding-bottom:400px;">CONTENT</div>
+      <div>
+        @foreach ($products as $product)
+          <div>
+            @if ($product->sex === 'Women')
+              <h2>Women</h2>
+                <img class="preview" src="{{ asset('img/' . $product->picture) }}" alt="{{ $product->name }}">
+                <p>{{ $product->name }}</p>
+                <p>{{ $product->price }}</p>
+            @endif
+          </div>
+          <div>
+            @if ($product->sex === 'Men')
+              <h2>Men</h2>
+                <img class="preview" src="{{ asset('img/' . $product->picture) }}" alt="{{ $product->name }}">
+                <p>{{ $product->name }}</p>
+                <p>{{ $product->price }}</p>
+            @endif
+          </div>
+          <div>
+            @if ($product->sex === 'Unisex')
+              <h2>Unisex</h2>
+                <img class="preview" src="{{ asset('img/' . $product->picture) }}" alt="{{ $product->name }}">
+                <p>{{ $product->name }}</p>
+                <p>{{ $product->price }}</p>
+            @endif
+          </div>
+        @endforeach
+      </div>
         <div style="text-align: center; vertical-align: middle" class="footer">
           FOOTER
         </div>

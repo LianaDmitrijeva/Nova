@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -32,5 +32,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-//Categories
-Route::get('/', [CategoryController::class, 'index']);
+
+//Products & Categories
+Route::get('/', [HomeController::class, 'index']);
