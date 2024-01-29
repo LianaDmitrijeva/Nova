@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
       <title>Nova</title>
       <!-- Bootstrap -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -12,13 +12,13 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-ywJldY+V5q5yFGr4uhmiC6dgu/Feq6auRR2doeS5l92PeDPAOcmmEEbI57fk8IqP" crossorigin="anonymous"></script>
       <!-- Style -->
       <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-      {{-- <link href="{{ asset('css/index.css') }}" rel="stylesheet"> --}}
+      <link href="{{ asset('css/mediaquary.css') }}" rel="stylesheet">
     </head>
     <body>
       <!-- Banner -->
       <div class="banner">
         <!-- Carousel Slide -->
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselInterval" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -35,18 +35,18 @@
               <img src="{{ asset('img/test3.jfif') }}" class="d-block w-100" alt="...">
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselInterval" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselInterval" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
       </div>
       <!-- Navbar-->
-      <div>
+      <div class="navigationbar">
         <nav class="navbar navbar-expand-md bg-body-tertiary">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">NOVA</a>
@@ -108,37 +108,140 @@
           </div>
         </nav>
       </div>
-      <div>
-        @foreach ($products as $product)
-          <div>
-            @if ($product->sex === 'Women')
-              <h2>Women</h2>
-                <img class="preview" src="{{ asset('img/' . $product->picture) }}" alt="{{ $product->name }}">
-                <p>{{ $product->name }}</p>
-                <p>{{ $product->price }}</p>
+  <!-- Carousel Product Women -->
+  <div>
+    @if(\App\Models\Product::where('sex', 'Women')->count() > 0)
+      <h2 class="caregoryheader">Women</h2>
+      <!-- Carousel for max-width: 999px -->
+      <div id="carousel1" class="carousel slide">
+        <div class="carousel-inner">
+          @foreach($products as $index => $product)
+            @if($index % 4 == 0)
+              <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                <div class="row">
             @endif
-          </div>
-          <div>
-            @if ($product->sex === 'Men')
-              <h2>Men</h2>
-                <img class="preview" src="{{ asset('img/' . $product->picture) }}" alt="{{ $product->name }}">
-                <p>{{ $product->name }}</p>
-                <p>{{ $product->price }}</p>
+                  <div class="col-lg-3">
+                    <div class="item-box">
+                      <div class="previewcard">
+                        <img class="preview" src="{{ asset('img/' . $product->picture) }}" alt="{{ $product->name }}">
+                        <h5>{{ $product->name }}</h5>
+                        <strong>{{ $product->price }}</strong>
+                      </div>
+                    </div>
+                  </div>
+            @if($index % 4 == 3 || $index == count($products) - 1)
+                </div>
+              </div>
             @endif
-          </div>
-          <div>
-            @if ($product->sex === 'Unisex')
-              <h2>Unisex</h2>
-                <img class="preview" src="{{ asset('img/' . $product->picture) }}" alt="{{ $product->name }}">
-                <p>{{ $product->name }}</p>
-                <p>{{ $product->price }}</p>
-            @endif
-          </div>
-        @endforeach
+          @endforeach
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+          <img src="{{ asset('svg/left_arrow.svg') }}" alt="Description of the icon">
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+          <img src="{{ asset('svg/right_arrow.svg') }}" alt="Description of the icon">
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-        <div style="text-align: center; vertical-align: middle" class="footer">
-          FOOTER
+    @endif
+  </div>
+
+<!-- Carousel for max-width: 745px -->
+<div id="carousel2" class="carousel slide">
+  <div class="carousel-inner">
+    @foreach($products as $index => $product)
+      @if($index % 3 == 0)
+        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+          <div class="row">
+      @endif
+            <div class="col-sm-4">
+              <div class="item-box">
+                <div class="previewcard">
+                  <img class="preview" src="{{ asset('img/' . $product->picture) }}" alt="{{ $product->name }}">
+                  <h5>{{ $product->name }}</h5>
+                  <strong>{{ $product->price }}</strong>
+                </div>
+              </div>
+            </div>
+      @if($index % 3 == 2 || $index == count($products) - 1)
+          </div>
+        </div>
+      @endif
+    @endforeach
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+    <img src="{{ asset('svg/left_arrow.svg') }}" alt="Description of the icon">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+    <img src="{{ asset('svg/right_arrow.svg') }}" alt="Description of the icon">
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Carousel for max-width: 495px -->
+<div id="carousel3" class="carousel slide">
+  <div class="carousel-inner">
+    @foreach($products as $index => $product)
+      @if($index % 2 == 0)
+        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+          <div class="row">
+      @endif
+            <div class="col-6">
+              <div class="item-box">
+                <div class="previewcard">
+                  <img class="preview" src="{{ asset('img/' . $product->picture) }}" alt="{{ $product->name }}">
+                  <h5>{{ $product->name }}</h5>
+                  <strong>{{ $product->price }}</strong>
+                </div>
+              </div>
+            </div>
+      @if($index % 2 == 1 || $index == count($products) - 1)
+          </div>
+        </div>
+      @endif
+    @endforeach
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+    <img src="{{ asset('svg/left_arrow.svg') }}" alt="Description of the icon">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+    <img src="{{ asset('svg/right_arrow.svg') }}" alt="Description of the icon">
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div id="carousel4" class="carousel slide">
+  <div class="carousel-inner">
+    @foreach($products as $index => $product)
+      <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+        <div class="row">
+          <div class="col-12">
+            <div class="item-box">
+              <div class="previewcard">
+                <img class="preview" src="{{ asset('img/' . $product->picture) }}" alt="{{ $product->name }}">
+                <h5>{{ $product->name }}</h5>
+                <strong>{{ $product->price }}</strong>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    @endforeach
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel4" data-bs-slide="prev">
+    <img src="{{ asset('svg/left_arrow.svg') }}" alt="Description of the icon">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel4" data-bs-slide="next">
+    <img src="{{ asset('svg/right_arrow.svg') }}" alt="Description of the icon">
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+      <!-- Footer -->
+      <div></div>
     </body>
 </html>
