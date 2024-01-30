@@ -5,7 +5,7 @@
   <!-- Carousel for max-width: 999px -->
   <div id="carousel11" class="carousel slide">
     <div class="carousel-inner">
-      @foreach($products as $index => $product)
+      @foreach($women_products as $index => $product)
         @if($index % 4 == 0)
           <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
             <div class="row">
@@ -19,7 +19,7 @@
                   </div>
                 </div>
               </div>
-              @if($index % 4 == 3 || $index == count($products) - 1)
+              @if($index % 4 == 3 || $index == count($women_products) - 1)
             </div>
           </div>
               @endif
@@ -38,7 +38,7 @@
   <!-- Carousel for max-width: 745px -->
   <div id="carousel22" class="carousel slide">
     <div class="carousel-inner">
-      @foreach($products as $index => $product)
+      @foreach($women_products as $index => $product)
         @if($index % 3 == 0)
           <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
             <div class="row">
@@ -52,7 +52,7 @@
                   </div>
                 </div>
               </div>
-              @if($index % 3 == 2 || $index == count($products) - 1)
+              @if($index % 3 == 2 || $index == count($women_products) - 1)
             </div>
           </div>
               @endif
@@ -71,7 +71,7 @@
   <!-- Carousel for max-width: 495px -->
   <div id="carousel33" class="carousel slide">
     <div class="carousel-inner">
-      @foreach($products as $index => $product)
+      @foreach($women_products as $index => $product)
         @if($index % 2 == 0)
           <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
             <div class="row">
@@ -85,7 +85,7 @@
                   </div>
                 </div>
               </div>
-              @if($index % 2 == 1 || $index == count($products) - 1)
+              @if($index % 2 == 1 || $index == count($women_products) - 1)
             </div>
           </div>
               @endif
@@ -104,7 +104,7 @@
   <!-- Carousel for width < 495px -->
   <div id="carousel44" class="carousel slide">
     <div class="carousel-inner">
-      @foreach($products as $index => $product)
+      @foreach($women_products as $index => $product)
         <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
           <div class="row">
             <div class="col-12">

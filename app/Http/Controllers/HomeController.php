@@ -11,8 +11,10 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $products = Product::all();
-
-        return view('welcome', compact('categories', 'products'));
+        $women_products = Product::where('sex', 'Women')->get();
+        $men_products = Product::where('sex', 'Men')->get();
+        $unisex_products = Product::where('sex', 'Unisex')->get();
+    
+        return view('welcome', compact('categories', 'women_products', 'men_products', 'unisex_products'));
     }
 }
