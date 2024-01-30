@@ -10,7 +10,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Blazers'],      //id=1
+            ['name' => 'Blazers'],      //id=1 +
             ['name' => 'Vests'],        //id=2
             ['name' => 'Shirts'],       //id=3
             ['name' => 'Blouses'],      //id=4
@@ -24,8 +24,119 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Accessories'],  //id=12
         ];
 
-        /////////////////// Trausers ///////////////////
         $products = [
+            ////////////////// Blazers //////////////////
+            //////////////////// Men ////////////////////
+            [
+                'name' => 'Skinny Fit Jacket',
+                'price' => 69.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Grey',
+                'sex'=> 'Men',
+                'picture' => 'men6.jfif',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Skinny Fit Jacket',
+                'price' => 69.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Black',
+                'sex'=> 'Men',
+                'picture' => 'men7.webp',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Skinny Fit Jacket',
+                'price' => 69.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Greige',
+                'sex'=> 'Men',
+                'picture' => 'men8.jfif',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Skinny Fit Jacket',
+                'price' => 69.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Dark blue',
+                'sex'=> 'Men',
+                'picture' => 'men9.webp',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Skinny Fit Jacket',
+                'price' => 69.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Burgundy',
+                'sex'=> 'Men',
+                'picture' => 'men10.jfif',
+                'category_id' => 1,
+            ],
+            ////////////////// Blazers //////////////////
+            /////////////////// Women ///////////////////
+            [
+                'name' => 'Double-breasted blazer',
+                'price' => 34.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Black',
+                'sex'=> 'Women',
+                'picture' => 'women6.webp',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Double-breasted blazer',
+                'price' => 34.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'White',
+                'sex'=> 'Women',
+                'picture' => 'women7.jfif',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Double-breasted blazer',
+                'price' => 34.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Light beige',
+                'sex'=> 'Women',
+                'picture' => 'women8.jfif',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Double-breasted blazer',
+                'price' => 34.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Beige',
+                'sex'=> 'Women',
+                'picture' => 'women9.webp',
+                'category_id' => 1,
+            ],
+            [
+                'name' => 'Double-breasted blazer',
+                'price' => 34.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Black/Snakeskin-patterned',
+                'sex'=> 'Women',
+                'picture' => 'women10.webp',
+                'category_id' => 1,
+            ],
+
+            ////////////////// Vests //////////////////
+            //////////////////// Men ////////////////////
+            ////////////////// Vests //////////////////
+            /////////////////// Women ///////////////////
+
+            ////////////////// Shirts //////////////////
+            //////////////////// Men ////////////////////
+            ////////////////// Shirts //////////////////
+            /////////////////// Women ///////////////////
+
+            ////////////////// Blouses //////////////////
+            //////////////////// Men ////////////////////
+            ////////////////// Blouses //////////////////
+            /////////////////// Women ///////////////////
+
+            ////////////////// Trausers //////////////////
+            //////////////////// Men ////////////////////
             [
                 'name' => 'Cargo Joggers',
                 'price' => 35.99,
@@ -71,15 +182,8 @@ class DatabaseSeeder extends Seeder
                 'picture' => 'men5.webp',
                 'category_id' => 5,
             ],
-            [
-                'name' => 'Slim Fit Trousers',
-                'price' => 25.99,
-                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
-                'colour' => 'Khaki green',
-                'sex'=> 'Men',
-                'picture' => 'men6.webp',
-                'category_id' => 5,
-            ],
+            ////////////////// Trausers //////////////////
+            /////////////////// Women ///////////////////
             [
                 'name' => 'Mom Loose Fit Trousers',
                 'price' => 29.99,
@@ -125,15 +229,6 @@ class DatabaseSeeder extends Seeder
                 'picture' => 'women5.webp',
                 'category_id' => 5,
             ],
-            [
-                'name' => 'Flared Twill Trousers',
-                'price' => 17.99,
-                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
-                'colour' => 'Light beige',
-                'sex'=> 'Women',
-                'picture' => 'women6.webp',
-                'category_id' => 5,
-            ]
         ];
         
         DB::table('categories')->insert($categories);
