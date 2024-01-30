@@ -26,13 +26,13 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="4500">
-              <img src="{{ asset('img/test3.jfif') }}" class="d-block w-100" alt="...">
+              <img src="{{ asset('img/banner2.avif') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="4500">
-              <img src="{{ asset('img/test3.jfif') }}" class="d-block w-100" alt="...">
+              <img src="{{ asset('img/banner2.avif') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="4500">
-              <img src="{{ asset('img/test3.jfif') }}" class="d-block w-100" alt="...">
+              <img src="{{ asset('img/banner2.avif') }}" class="d-block w-100" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselInterval" data-bs-slide="prev">

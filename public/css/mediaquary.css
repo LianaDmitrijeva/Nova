@@ -27,32 +27,32 @@
 }
 /***********************************/
 @media (max-width: 999px) {
-    #carousel1, #carousel11{
+    #carousel1, #carousel11, #carousel111{
         display: none;
     }
 }
 @media (min-width: 999px) {
-    #carousel2, #carousel3, #carousel4,#carousel22, #carousel33, #carousel44 {
+    #carousel2, #carousel3, #carousel4,#carousel22, #carousel33, #carousel44, #carousel222, #carousel333, #carousel444{
         display: none;
     }
 }
 @media (max-width: 745px) {
-    #carousel2,#carousel22{
+    #carousel2, #carousel22, #carousel222{
         display: none;
     }
 }
 @media (min-width: 745px) {
-    #carousel3, #carousel4, #carousel33, #carousel44{
+    #carousel3, #carousel4, #carousel33, #carousel44, #carousel333, #carousel444{
         display: none;
     }
 }
 @media (max-width: 495px) {
-    #carousel3, #carousel33{
+    #carousel3, #carousel33, #carousel333{
         display: none;
     }
 }
 @media (min-width: 495px) {
-    #carousel4, #carousel44{
+    #carousel4, #carousel44, #carousel444{
         display: none;
     }
 }

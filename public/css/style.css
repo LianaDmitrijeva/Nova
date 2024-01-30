@@ -24,12 +24,10 @@ body{
  }
 /************** Banner **************/
 .banner{
-    height:100%;
-    width:100%;
-    min-width: 220px;
+    max-height: 60vh;
 }
 .banner .carousel-inner {
-    height: 100vh;
+    max-height: 60vh;
 }
 /*********** Preview cards **********/
 .caregoryheader{

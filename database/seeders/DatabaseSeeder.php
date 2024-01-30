@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Suits'],        //id=8
             ['name' => 'Tuxedos'],      //id=9
             ['name' => 'Coats'],        //id=10
-            ['name' => 'Shoes'],        //id=11
+            ['name' => 'Hoodies'],      //id=11
             ['name' => 'Accessories'],  //id=12
         ];
 
@@ -229,6 +229,54 @@ class DatabaseSeeder extends Seeder
                 'picture' => 'women5.webp',
                 'category_id' => 5,
             ],
+
+            ////////////////// Hoodies //////////////////
+            ////////////////// Unisex ///////////////////
+            [
+                'name' => 'Regular Fit Hoodie',
+                'price' => 29.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Black',
+                'sex'=> 'Unisex',
+                'picture' => 'unisex1.webp',
+                'category_id' => 11,
+            ],
+            [
+                'name' => 'Regular Fit Hoodie',
+                'price' => 29.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Light beige',
+                'sex'=> 'Unisex',
+                'picture' => 'unisex2.webp',
+                'category_id' => 11,
+            ],
+            [
+                'name' => 'Regular Fit Hoodie',
+                'price' => 29.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Dark brown',
+                'sex'=> 'Unisex',
+                'picture' => 'unisex3.webp',
+                'category_id' => 11,
+            ],
+            [
+                'name' => 'Regular Fit Hoodie',
+                'price' => 29.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Green',
+                'sex'=> 'Unisex',
+                'picture' => 'unisex4.webp',
+                'category_id' => 11,
+            ],
+            [
+                'name' => 'Regular Fit Hoodie',
+                'price' => 29.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Cream',
+                'sex'=> 'Unisex',
+                'picture' => 'unisex5.webp',
+                'category_id' => 11,
+            ]
         ];
         
         DB::table('categories')->insert($categories);
