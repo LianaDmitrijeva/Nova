@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Vests'],        //id=2
             ['name' => 'Shirts'],       //id=3
             ['name' => 'Blouses'],      //id=4
-            ['name' => 'Trousers'],     //id=5
+            ['name' => 'Trousers'],     //id=5 +
             ['name' => 'Skirts'],       //id=6
             ['name' => 'Dresses'],      //id=7
             ['name' => 'Suits'],        //id=8
@@ -24,55 +24,120 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Accessories'],  //id=12
         ];
 
+        /////////////////// Trausers ///////////////////
         $products = [
             [
-                'name' => 'Black blazer',
-                'price' => 49.99,
+                'name' => 'Cargo Joggers',
+                'price' => 35.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Black',
+                'sex'=> 'Men',
+                'picture' => 'men1.webp',
+                'category_id' => 5,
+            ],
+            [
+                'name' => 'Cargo Joggers',
+                'price' => 35.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Khaki green',
+                'sex'=> 'Men',
+                'picture' => 'men2.webp',
+                'category_id' => 5,
+            ],
+            [
+                'name' => 'Cargo Joggers',
+                'price' => 35.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Dark grey',
+                'sex'=> 'Men',
+                'picture' => 'men3.webp',
+                'category_id' => 5,
+            ],
+            [
+                'name' => 'Cargo Joggers',
+                'price' => 35.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Beige',
+                'sex'=> 'Men',
+                'picture' => 'men4.webp',
+                'category_id' => 5,
+            ],
+            [
+                'name' => 'Slim Fit Trousers',
+                'price' => 25.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Black',
+                'sex'=> 'Men',
+                'picture' => 'men5.webp',
+                'category_id' => 5,
+            ],
+            [
+                'name' => 'Slim Fit Trousers',
+                'price' => 25.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Khaki green',
+                'sex'=> 'Men',
+                'picture' => 'men6.webp',
+                'category_id' => 5,
+            ],
+            [
+                'name' => 'Mom Loose Fit Trousers',
+                'price' => 29.99,
                 'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
                 'colour' => 'Black',
                 'sex'=> 'Women',
-                'picture' => 'product1.webp',
-                'category_id' => 1,
+                'picture' => 'women1.webp',
+                'category_id' => 5,
             ],
             [
-                'name' => 'Gray blazer',
-                'price' => 49.99,
-                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
-                'colour' => 'Gray',
-                'sex'=> 'Women',
-                'picture' => 'product2.webp',
-                'category_id' => 1,
-            ],
-            [
-                'name' => 'Beige blazer',
-                'price' => 49.99,
+                'name' => 'Mom Loose Fit Trousers',
+                'price' => 29.99,
                 'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
                 'colour' => 'Beige',
                 'sex'=> 'Women',
-                'picture' => 'product3.webp',
-                'category_id' => 1,
+                'picture' => 'women2.webp',
+                'category_id' => 5,
             ],
             [
-                'name' => 'Rib-knit bodycon dress',
-                'price' => 39.99,
+                'name' => 'Mom Loose Fit Trousers',
+                'price' => 29.99,
                 'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
-                'colour' => 'Black',
+                'colour' => 'Dark khaki green',
                 'sex'=> 'Women',
-                'picture' => 'product5.webp',
-                'category_id' => 7,
+                'picture' => 'women3.webp',
+                'category_id' => 5,
             ],
             [
-                'name' => 'Crêpe slip dress',
-                'price' => 20.99,
+                'name' => 'Flared Twill Trousers',
+                'price' => 17.99,
                 'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
-                'colour' => 'Black',
+                'colour' => 'Dark grey',
                 'sex'=> 'Women',
-                'picture' => 'product4.webp',
-                'category_id' => 7,
+                'picture' => 'women4.webp',
+                'category_id' => 5,
             ],
+            [
+                'name' => 'Flared Twill Trousers',
+                'price' => 17.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'White',
+                'sex'=> 'Women',
+                'picture' => 'women5.webp',
+                'category_id' => 5,
+            ],
+            [
+                'name' => 'Flared Twill Trousers',
+                'price' => 17.99,
+                'sizes' => json_encode(['XS','S', 'M', 'L', 'XL']),
+                'colour' => 'Light beige',
+                'sex'=> 'Women',
+                'picture' => 'women6.webp',
+                'category_id' => 5,
+            ]
         ];
-                DB::table('categories')->insert($categories);
-                DB::table('products')->insert($products);
+        
+        DB::table('categories')->insert($categories);
+        DB::table('products')->insert($products);
         
     }
 }

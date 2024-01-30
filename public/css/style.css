@@ -36,6 +36,8 @@ body{
     text-align: center;
     background-color: rgba(0, 0, 0, 0.904);
     color: rgb(255, 255, 255);
+    padding-top:10px;
+    padding-bottom:10px;
 }
 .preview{
     width: 230px;
